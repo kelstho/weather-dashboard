@@ -3,12 +3,13 @@ $('#search').on('click', function() {
     let APIKey = "b289af46fb389f130dbb6ff895414999";
     let currentURL = "https://api.openweathermap.org/data/2.5/weather?q=" + location + "&APPID=" + APIKey;
     let forecastURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + location + "&APPID=" + APIKey;
+    let today = moment().format('L');
     $.ajax({
         url: currentURL,
         method: "GET"
     }).then(function(response) {
         console.log(response);
-        $('#current-city').text(response.name);
+        $('#current-city').text(response.name + " " + "(" + today + ")");
         $('#current-icon').text("http://openweathermap.org/img/wn/" + response.weather[0].icon + "@2x.png");
         $('#current-temp').text("Current Temp: "+ response.main.temp);
         $('#current-humid').text("Current Humidity: " + response.main.humidity + "%");
