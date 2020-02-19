@@ -4,6 +4,7 @@ $('#search').on('click', function() {
     let currentURL = "https://api.openweathermap.org/data/2.5/weather?q=" + location + "&APPID=" + APIKey;
     let forecastURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + location + "&APPID=" + APIKey;
     let today = moment().format('L');
+
     $.ajax({
         url: currentURL,
         method: "GET"
@@ -15,6 +16,7 @@ $('#search').on('click', function() {
         $('#current-humid').text("Current Humidity: " + response.main.humidity + "%");
         $('#current-wind').text("Current Wind Speed: " + response.wind.speed);
     });
+    
     $.ajax({
         url: forecastURL,
         method: "GET"
