@@ -21,30 +21,33 @@ $('#search').on('click', function() {
         url: forecastURL,
         method: "GET"
     }).then(function(response) {
+        $("#five-day-title-div").empty();
         console.log(response);
         let fiveDayTitleDiv = $('#five-day-title-div');
         let fiveDayTitle = $("<h2>").text("5 Day Forecast");
         fiveDayTitle.attr("id", "five-day-title");
         fiveDayTitleDiv.append(fiveDayTitle);
-        $('#day-1').text(response.date);
-        $('#day-1-cond').text(response.list[0].weather[0].main);
-        $('#day-1-temp').text(response.list[0].main.temp);
-        $('#day-1-humid').text(response.list[0].main.humidity + "%");
-        $('#day-2').text(response.date);
-        $('#day-2-cond').text(response.list[1].weather[0].main);
-        $('#day-2-temp').text(response.list[1].main.temp);
-        $('#day-2-humid').text(response.list[1].main.humidity + "%");
-        $('#day-3').text(response.date);
-        $('#day-3-cond').text(response.list[2].weather[0].main);
-        $('#day-3-temp').text(response.list[2].main.temp);
-        $('#day-3-humid').text(response.list[2].main.humidity + "%");
-        $('#day-4').text(response.date);
-        $('#day-4-cond').text(response.list[3].weather[0].main);
-        $('#day-4-temp').text(response.list[3].main.temp);
-        $('#day-4-humid').text(response.list[3].main.humidity + "%");
-        $('#day-5').text(response.date);
-        $('#day-5-cond').text(response.list[4].weather[0].main);
-        $('#day-5-temp').text(response.list[4].main.temp);
-        $('#day-5-humid').text(response.list[4].main.humidity + "%");
+        for (let i=0; i<6; i++) {
+        $(`#day-${[i]}`).text(response.date);
+        $(`#day-${[i]}-cond`).text(response.list[i].weather[0].main);
+        $(`#day-${[i]}-temp`).text(response.list[i].main.temp);
+        $(`#day-${[i]}-humid`).text(response.list[i].main.humidity + "%");
+        }
+        // $('#day-2').text(response.date);
+        // $('#day-2-cond').text(response.list[1].weather[0].main);
+        // $('#day-2-temp').text(response.list[1].main.temp);
+        // $('#day-2-humid').text(response.list[1].main.humidity + "%");
+        // $('#day-3').text(response.date);
+        // $('#day-3-cond').text(response.list[2].weather[0].main);
+        // $('#day-3-temp').text(response.list[2].main.temp);
+        // $('#day-3-humid').text(response.list[2].main.humidity + "%");
+        // $('#day-4').text(response.date);
+        // $('#day-4-cond').text(response.list[3].weather[0].main);
+        // $('#day-4-temp').text(response.list[3].main.temp);
+        // $('#day-4-humid').text(response.list[3].main.humidity + "%");
+        // $('#day-5').text(response.date);
+        // $('#day-5-cond').text(response.list[4].weather[0].main);
+        // $('#day-5-temp').text(response.list[4].main.temp);
+        // $('#day-5-humid').text(response.list[4].main.humidity + "%");
     });
 });
