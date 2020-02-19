@@ -22,8 +22,9 @@ $('#search').on('click', function() {
         method: "GET"
     }).then(function(response) {
         console.log(response);
-        let fiveDayTitleDiv = $('#5-day-title');
+        let fiveDayTitleDiv = $('#five-day-title-div');
         let fiveDayTitle = $("<h2>").text("5 Day Forecast");
+        fiveDayTitle.attr("id", "five-day-title");
         fiveDayTitleDiv.append(fiveDayTitle);
         $('#day-1').text(response.date);
         $('#day-1-cond').text(response.list[0].weather[0].main);
