@@ -38,7 +38,8 @@ $(document).ready(() => {
         let currentURL = "https://api.openweathermap.org/data/2.5/weather?q=" + location + "&APPID=" + APIKey;
         let forecastURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + location + "&APPID=" + APIKey;
         let today = moment().format('L');
-
+        
+        $('#location').val("");
         $.ajax({
             url: currentURL,
             method: "GET"
