@@ -1,3 +1,3 @@
-This assignment is supposed to be a weather dashboard that  runs dynamically utilizing HTML, CSS, and jQuery. Unfortunately, I was not able to get very far in the alloted amount of time before the assignment was due, so I am submitting what I was able to complete. The city name and the humdity read correctly in the current temp div. Also the humdity displays correctly in the 5 day forecast, but the temperature is not converted correctly. I intend to continue working on this, so suggestions and cirtiques are highly welcomed. Thank you very much!
+Weather Dashboard
 
 https://kelstho.github.io/weather-dashboard/
