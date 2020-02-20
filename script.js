@@ -33,9 +33,11 @@ $(document).ready(() => {
             $('#current-temp').text("Current Temp: "+ response.main.temp);
             $('#current-humid').text("Current Humidity: " + response.main.humidity + "%");
             $('#current-wind').text("Current Wind Speed: " + response.wind.speed);
-            let city = response.name;
-            prevCities.push(city);
-            renderPrevCities();
+            if (jQuery.inArray(response.name, prevCities) === -1) {
+                let city = response.name;
+                prevCities.push(city);
+                renderPrevCities();
+            }
         });
 
         $.ajax({
