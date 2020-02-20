@@ -12,7 +12,6 @@ $(document).ready(function() {
             button.attr("class", "prev-city");
             button.attr("data-value", prevCities[i]);
             button.text(prevCities[i]);
-
             $("#prev-cities").prepend(cityRow);
             cityRow.append(cityCol);
             cityCol.append(button);
@@ -50,10 +49,10 @@ $(document).ready(function() {
             fiveDayTitle.attr("id", "five-day-title");
             fiveDayTitleDiv.append(fiveDayTitle);
             for (let i=0; i<6; i++) {
-            $(`#day-${[i]}`).text(response.date);
-            $(`#day-${[i]}-cond`).text(response.list[i].weather[0].main);
-            $(`#day-${[i]}-temp`).text(response.list[i].main.temp);
-            $(`#day-${[i]}-humid`).text(response.list[i].main.humidity + "%");
+                $(`#day-${[i]}`).text(response.date);
+                $(`#day-${[i]}-cond`).text(response.list[i].weather[0].main);
+                $(`#day-${[i]}-temp`).text(response.list[i].main.temp);
+                $(`#day-${[i]}-humid`).text(response.list[i].main.humidity + "%");
             };
         });
     };
