@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(() => {
     let prevCities = [];
 
     function renderPrevCities() {
@@ -27,7 +27,7 @@ $(document).ready(function() {
         $.ajax({
             url: currentURL,
             method: "GET"
-        }).then(function(response) {
+        }).then((response) => {
             $('#current-city').text(response.name + " " + "(" + today + ")");
             $('#current-icon').text("http://openweathermap.org/img/wn/" + response.weather[0].icon + "@2x.png");
             $('#current-temp').text("Current Temp: "+ response.main.temp);
@@ -41,7 +41,7 @@ $(document).ready(function() {
         $.ajax({
             url: forecastURL,
             method: "GET"
-        }).then(function(response) {
+        }).then((response) => {
             $("#five-day-title-div").empty();
             console.log(response);
             let fiveDayTitleDiv = $('#five-day-title-div');
@@ -57,7 +57,7 @@ $(document).ready(function() {
         });
     };
 
-    $('#search').on('click', function() {
+    $('#search').on('click', () => {
         let location = $('#location').val();
         getWeather(location);
     });
