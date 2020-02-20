@@ -1,8 +1,23 @@
 $(document).ready(() => {
-    let prevCities = [];
+    
+    prevCities = [];
+
+    init();
+
+    function init() {
+        let savedButtons = JSON.parse(localStorage.getItem("saved"));
+        if (savedButtons !== null) {
+            prevCities = savedButtons;
+        }
+        renderPrevCities();
+    }
+
+    function savedCities() {
+        localStorage.setItem("saved", JSON.stringify(prevCities));
+    }
 
     function renderPrevCities() {
-        $("#prev-cities").empty();
+        $('#prev-cities').empty();
         for (let i=0; i<prevCities.length; i++) {
             let cityRow = $("<div>");
             cityRow.attr("class", "row");
@@ -36,6 +51,7 @@ $(document).ready(() => {
             if (jQuery.inArray(response.name, prevCities) === -1) {
                 let city = response.name;
                 prevCities.push(city);
+                savedCities();
                 renderPrevCities();
             }
         });
