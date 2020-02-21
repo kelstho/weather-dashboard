@@ -67,7 +67,7 @@ $(document).ready(() => {
                 if (uv <= 2.9) {
                     uvDiv.attr("style", "color: green;")
                 } else if (uv >= 3.0 && uv <= 5.9) {
-                    uvDiv.attr("style", "color: yellow;")
+                    uvDiv.attr("style", "color: gold;")
                 } else if (uv >= 6.0 && uv <= 7.9) {
                     uvDiv.attr("style", "color: orange;")
                 } else if (uv >= 8.0 && uv <= 10.9) {
