@@ -62,8 +62,20 @@ $(document).ready(() => {
                 url: uvURL,
                 method: "GET"
             }).then((response) => {
-                console.log(response);
-                $('#uv').text('UV Index: ' + response.value);
+                let uvDiv = $('#uv');
+                let uv = response.value.toFixed(1);
+                if (uv <= 2.9) {
+                    uvDiv.attr("style", "color: green;")
+                } else if (uv >= 3.0 && uv <= 5.9) {
+                    uvDiv.attr("style", "color: yellow;")
+                } else if (uv >= 6.0 && uv <= 7.9) {
+                    uvDiv.attr("style", "color: orange;")
+                } else if (uv >= 8.0 && uv <= 10.9) {
+                    uvDiv.attr("style", "color: red;")
+                } else {
+                    uvDiv.attr("style", "color: purple;")
+                }
+                uvDiv.text('UV Index: ' + uv);
             });
         });
 
