@@ -85,7 +85,7 @@ $(document).ready(() => {
         }).then((response) => {
             $("#five-day-title-div").empty();
             let fiveDayTitleDiv = $('#five-day-title-div');
-            let fiveDayTitle = $("<h2>").text("5 Day Forecast");
+            let fiveDayTitle = $("<h3>").text("5 Day Forecast");
             fiveDayTitle.attr("id", "five-day-title");
             fiveDayTitleDiv.append(fiveDayTitle);
             $(`#day-1`).text(moment().add(1, "days").format("L"));
