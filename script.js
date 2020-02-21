@@ -24,7 +24,7 @@ $(document).ready(() => {
             let cityCol = $("<div>");
             cityCol.attr("class", "col-sm-12");
             let button = $("<button>");
-            button.attr("class", "prev-city");
+            button.attr("class", "prev-city btn btn-warning mt-1 mb-1");
             button.attr("data-value", prevCities[i]);
             button.text(prevCities[i]);
             $("#prev-cities").prepend(cityRow);
