@@ -44,6 +44,9 @@ $(document).ready(() => {
             url: currentURL,
             method: "GET"
         }).then((response) => {
+            let lat = response.coord.lat;
+            let lon = response.coord.lon;
+            let uvURL = "https://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + lon + "&APPID=" + APIKey; 
             $('#current-city').text(response.name + " " + "(" + today + ")");
             $('#current-icon').attr('src', `https://openweathermap.org/img/wn/${response.weather[0].icon}.png`);
             $('#current-temp').text("Current Temp: "+ Math.round(response.main.temp) + "°F");
@@ -55,6 +58,13 @@ $(document).ready(() => {
                 savedCities();
                 renderPrevCities();
             }
+            $.ajax({
+                url: uvURL,
+                method: "GET"
+            }).then((response) => {
+                console.log(response);
+                $('#uv').text('UV Index: ' + response.value);
+            });
         });
 
         $.ajax({
