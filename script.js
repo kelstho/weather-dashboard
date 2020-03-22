@@ -58,6 +58,7 @@ $(document).ready(() => {
                 savedCities();
                 renderPrevCities();
             }
+            //code to grab UV index
             $.ajax({
                 url: uvURL,
                 method: "GET"
