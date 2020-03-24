@@ -1,91 +1,95 @@
 <!DOCTYPE html>
 <html lang="en-us">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Weather Dashboard</title>
-        <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    </head>
 
-    <body>
-        <!-- Page Header -->
-        <div class="row p-3 bg-primary text-white" id="header">
-            <div class="col">
-                <h1 class="text-center">Weather Dashboard</h1>
-            </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+
+<body>
+    <!-- Page Header -->
+    <div class="row p-3 bg-primary text-white" id="header">
+        <div class="col">
+            <h1 class="text-center">Weather Dashboard</h1>
         </div>
-        
-        <!-- Dashboard Container -->
-        <div class="container mt-3">
-            <div class="row">
-                <!-- Search & Prev Cities Container -->
-                <div class="col-sm-12 col-md-4">
-                    <!-- Search -->
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" id="location" placeholder="Search for a City" aria-label="Recipient's username" aria-describedby="button-addon2">
-                        <div class="input-group-append">
-                          <button class="btn btn-outline-success" type="button" id="search">Search</button>
-                        </div>
-                    </div>
-                    <!-- Previously Searched Cities -->
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div id="prev-cities"></div>
-                        </div>
+    </div>
+
+    <!-- Dashboard Container -->
+    <div class="container mt-3">
+        <div class="row">
+            <!-- Search & Prev Cities Container -->
+            <div class="col-sm-12 col-md-4">
+                <!-- Search -->
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="location" placeholder="Search for a City"
+                        aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-success" type="button" id="search">Search</button>
                     </div>
                 </div>
-               <!-- Weather Info Container -->
-                <div class="col-sm-12 col-md-8">
-                     <!-- Current City Info -->
-                    <h2 id="current-city"></h2>
-                    <img src="" id="current-icon">
-                    <div id="current-temp"></div>
-                    <div id="current-humid"></div>
-                    <div id="current-wind"></div>
-                    <div id="uv"></div>
-                    <!-- Five Day Forecast -->
-                    <div class="row">
-                        <div class="col-12 mt-3 px-0" id="five-day-title-div"></div>
-                        <div class="col-sm-12 col-md-2">
-                            <h6 id="day-1"></h6>
-                            <img src="" id="day-1-cond">
-                            <div id="day-1-temp"></div>
-                            <div id="day-1-humid"></div>
-                        </div>
-                        <div class="col-sm-12 col-md-2">
-                            <h6 id="day-2"></h6>
-                            <img src="" id="day-2-cond">
-                            <div id="day-2-temp"></div>
-                            <div id="day-2-humid"></div>
-                        </div>
-                        <div class="col-sm-12 col-md-2">
-                            <h6 id="day-3"></h6>
-                            <img src="" id="day-3-cond">
-                            <div id="day-3-temp"></div>
-                            <div id="day-3-humid"></div>
-                        </div>
-                        <div class="col-sm-12 col-md-2">
-                            <h6 id="day-4"></h6>
-                            <img src="" id="day-4-cond">
-                            <div id="day-4-temp"></div>
-                            <div id="day-4-humid"></div>
-                        </div>
-                        <div class="col-sm-12 col-md-2">
-                            <h6 id="day-5"></h6>
-                            <img src="" id="day-5-cond">
-                            <div id="day-5-temp"></div>
-                            <div id="day-5-humid"></div>
-                        </div>
+                <!-- Previously Searched Cities -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div id="prev-cities"></div>
                     </div>
                 </div>
             </div>
+            <!-- Weather Info Container -->
+            <div class="col-sm-12 col-md-8">
+                <!-- Current City Info -->
+                <h2 id="current-city"></h2>
+                <img src="" id="current-icon">
+                <div id="current-temp"></div>
+                <div id="current-humid"></div>
+                <div id="current-wind"></div>
+                <div id="uv"></div>
+                <!-- Five Day Forecast -->
+                <div class="row">
+                    <div class="col-12 mt-3 px-0" id="five-day-title-div"></div>
+                    <div class="col-sm-12 col-md-2">
+                        <h6 id="day-1"></h6>
+                        <img src="" id="day-1-cond">
+                        <div id="day-1-temp"></div>
+                        <div id="day-1-humid"></div>
+                    </div>
+                    <div class="col-sm-12 col-md-2">
+                        <h6 id="day-2"></h6>
+                        <img src="" id="day-2-cond">
+                        <div id="day-2-temp"></div>
+                        <div id="day-2-humid"></div>
+                    </div>
+                    <div class="col-sm-12 col-md-2">
+                        <h6 id="day-3"></h6>
+                        <img src="" id="day-3-cond">
+                        <div id="day-3-temp"></div>
+                        <div id="day-3-humid"></div>
+                    </div>
+                    <div class="col-sm-12 col-md-2">
+                        <h6 id="day-4"></h6>
+                        <img src="" id="day-4-cond">
+                        <div id="day-4-temp"></div>
+                        <div id="day-4-humid"></div>
+                    </div>
+                    <div class="col-sm-12 col-md-2">
+                        <h6 id="day-5"></h6>
+                        <img src="" id="day-5-cond">
+                        <div id="day-5-temp"></div>
+                        <div id="day-5-humid"></div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="script.js"></script>
-    </body>
- </html>
+</body>
+
+</html>

@@ -1,5 +1,5 @@
 $(document).ready(() => {
-    
+
     prevCities = [];
 
     init();
@@ -18,7 +18,7 @@ $(document).ready(() => {
 
     function renderPrevCities() {
         $('#prev-cities').empty();
-        for (let i=0; i<prevCities.length; i++) {
+        for (let i = 0; i < prevCities.length; i++) {
             let cityRow = $("<div>");
             cityRow.attr("class", "row");
             let cityCol = $("<div>");
@@ -46,10 +46,10 @@ $(document).ready(() => {
         }).then((response) => {
             let lat = response.coord.lat;
             let lon = response.coord.lon;
-            let uvURL = "https://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + lon + "&APPID=" + APIKey; 
+            let uvURL = "https://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + lon + "&APPID=" + APIKey;
             $('#current-city').text(response.name + " " + "(" + today + ")");
             $('#current-icon').attr('src', `https://openweathermap.org/img/wn/${response.weather[0].icon}.png`);
-            $('#current-temp').text("Current Temp: "+ Math.round(response.main.temp) + "°F");
+            $('#current-temp').text("Current Temp: " + Math.round(response.main.temp) + "°F");
             $('#current-humid').text("Current Humidity: " + response.main.humidity + "%");
             $('#current-wind').text("Current Wind Speed: " + Math.round(response.wind.speed) + " mph");
             if (jQuery.inArray(response.name, prevCities) === -1) {
@@ -117,7 +117,7 @@ $(document).ready(() => {
         getWeather(location);
     });
 
-    $(document).on('click', '.prev-city', function() {
+    $(document).on('click', '.prev-city', function () {
         let location = $(this).attr('data-value');
         getWeather(location);
     });
